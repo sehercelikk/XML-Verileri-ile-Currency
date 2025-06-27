@@ -1,0 +1,12 @@
+C:\Users\Seher CELIK\Desktop\OrnekProje\OrnekProje\bin\Debug\OrnekProje.exe.config
+C:\Users\Seher CELIK\Desktop\OrnekProje\OrnekProje\bin\Debug\OrnekProje.exe
+C:\Users\Seher CELIK\Desktop\OrnekProje\OrnekProje\bin\Debug\OrnekProje.pdb
+C:\Users\Seher CELIK\Desktop\OrnekProje\OrnekProje\obj\Debug\OrnekProje.csproj.AssemblyReference.cache
+C:\Users\Seher CELIK\Desktop\OrnekProje\OrnekProje\obj\Debug\OrnekProje.csproj.CoreCompileInputs.cache
+C:\Users\Seher CELIK\Desktop\OrnekProje\OrnekProje\obj\Debug\OrnekProje.exe
+C:\Users\Seher CELIK\Desktop\OrnekProje\OrnekProje\obj\Debug\OrnekProje.pdb
+C:\Users\Seher CELIK\Desktop\OrnekProje\OrnekProje\bin\Debug\EntityFramework.dll
+C:\Users\Seher CELIK\Desktop\OrnekProje\OrnekProje\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Seher CELIK\Desktop\OrnekProje\OrnekProje\bin\Debug\EntityFramework.xml
+C:\Users\Seher CELIK\Desktop\OrnekProje\OrnekProje\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Seher CELIK\Desktop\OrnekProje\OrnekProje\obj\Debug\OrnekProje.csproj.Up2Date

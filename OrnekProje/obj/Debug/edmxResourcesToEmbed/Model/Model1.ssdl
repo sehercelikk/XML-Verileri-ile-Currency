@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CurrencyDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Currency">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CurrencyName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CurrencySymbol" Type="nchar" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="CurrencyValue">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CurrencyId" Type="int" />
+    <Property Name="CurrencyBuying" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="CurrencySelling" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="Date" Type="date" />
+  </EntityType>
+  <EntityType Name="Operation">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CustomerSurname" Type="nvarchar" MaxLength="50" />
+    <Property Name="CurrencyId" Type="int" />
+    <Property Name="OperationType" Type="nvarchar" MaxLength="10" />
+    <Property Name="CurrentValue" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="Amount" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="TotalPrice" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="Date" Type="date" />
+  </EntityType>
+  <Association Name="FK_CurrencyValue_Currency">
+    <End Role="Currency" Type="Self.Currency" Multiplicity="0..1" />
+    <End Role="CurrencyValue" Type="Self.CurrencyValue" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Currency">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CurrencyValue">
+        <PropertyRef Name="CurrencyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Operation_Currency">
+    <End Role="Currency" Type="Self.Currency" Multiplicity="0..1" />
+    <End Role="Operation" Type="Self.Operation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Currency">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Operation">
+        <PropertyRef Name="CurrencyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CurrencyDbModelStoreContainer">
+    <EntitySet Name="Currency" EntityType="Self.Currency" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CurrencyValue" EntityType="Self.CurrencyValue" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Operation" EntityType="Self.Operation" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_CurrencyValue_Currency" Association="Self.FK_CurrencyValue_Currency">
+      <End Role="Currency" EntitySet="Currency" />
+      <End Role="CurrencyValue" EntitySet="CurrencyValue" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Operation_Currency" Association="Self.FK_Operation_Currency">
+      <End Role="Currency" EntitySet="Currency" />
+      <End Role="Operation" EntitySet="Operation" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
